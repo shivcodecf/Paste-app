@@ -75,7 +75,7 @@ const Paste = () => {
       onChange ={(e) =>setSearchTerm(e.target.value)}
 
       /> 
-      
+
       <div className='flex flex-col gap-5 mt-5'>
        {
          data.length>0 &&
@@ -83,7 +83,7 @@ const Paste = () => {
           (paste) =>{
             return (
               <div className='border' key={paste?._id}>
-                <div>
+                <div className='border-2 bg-slate-50'>
               {paste.title}
               </div>
               <div> 
