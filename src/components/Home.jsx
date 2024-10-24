@@ -18,12 +18,15 @@ const Home = () => {
     const dispatch = useDispatch(); 
 
     function createPaste(){
+
+      const created = new Date().toLocaleString()
      
         const paste = {
             title:title,
             content:value,
             _id:pasteId || Date.now().toString(36),
-            createdAt:new Date().toISOString(),
+            createdAt:created,
+           
         }
 
         if(pasteId)
@@ -53,7 +56,7 @@ const Home = () => {
 
   return (
     <>
-    <div className='flex flex-row gap-7 place-content-between'>
+    <div className='flex flex-row gap-7 place-content-between ml-[130px] w-[600px] bg-white'>
       <input  
        className='p-2 rounded-2xl mt-2 w-[80%] pl-5'
        type = 'text'
@@ -62,9 +65,9 @@ const Home = () => {
        onChange = {(e) =>setTitle(e.target.value)}
       />
 
-      <button onClick = {createPaste} className='p-1 rounded-2xl mt-4'>
+      <button onClick = {createPaste} className='p-1 rounded-3xl mt-4 bg-blue-500 w-[100px] h-[50px]'>
         {
-            pasteId ? "Update My Paste" : "Create My Paste"
+            pasteId ? "Update" : "Create"
         }
       </button> 
       </div> 
